@@ -1,0 +1,46 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "create-dist": "mkdir -p dist",
+    "clean": "rm -rf dist/*",
+    "build": "npm run create-dist && npm run clean && npm run browserify",
+    "browserify": "browserify -d -e src/app.js -o dist/app.js",
+    "watch": "watchify -v -e src/app.js -o dist/app.js",
+    "test": "eslint src",
+    "start": "npm run build && open index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cakecatz/package.json.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cakecatz/package.json/issues"
+  },
+  "homepage": "https://github.com/cakecatz/package.json#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.4.2",
+    "eslint-plugin-react": "^5.1.1",
+    "watchify": "^3.7.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  }
+}
