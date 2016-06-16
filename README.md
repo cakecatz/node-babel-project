@@ -5,3 +5,4 @@
 - browserify
 - watchify
 - eslint
+- browser-sync
